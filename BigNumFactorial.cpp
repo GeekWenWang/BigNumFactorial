@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <sstream>
+
 
 using namespace std;
 
@@ -8,11 +8,19 @@ string mutiple(string a, string b);
 int stringElenmentToInteger(char c);
 string resultprocessing(string* d);
 bool isNotZero(string e);
+string changeIntTo(int f);
 
 int main()
 {
     int a = 1;
     string Multiplicand = "1";
+    while(a<37)
+    {
+        string temp = changeIntTo(a);
+        Multiplicand = mutiple(Multiplicand,temp);
+        a++;
+        cout << Multiplicand << endl;
+    }
     cout<<mutiple(mutiple("39916810","12"),"13");
     return 0;
 }
@@ -217,3 +225,45 @@ bool isNotZero(string e)
     return 0;
 }
 
+string changeIntTo(int f)
+{
+    if(f==1){return "1";}
+    if(f==2){return "2";}
+    if(f==3){return "3";}
+    if(f==4){return "4";}
+    if(f==5){return "5";}
+    if(f==6){return "6";}
+    if(f==7){return "7";}
+    if(f==8){return "8";}
+    if(f==9){return "9";}
+    if(f==10){return "10";}
+    if(f==11){return "11";}
+    if(f==12){return "12";}
+    if(f==13){return "13";}
+    if(f==14){return "14";}
+    if(f==15){return "15";}
+    if(f==16){return "16";}
+    if(f==17){return "17";}
+    if(f==18){return "18";}
+    if(f==19){return "19";}
+    if(f==20){return "20";}
+    if(f==21){return "21";}
+    if(f==22){return "22";}
+    if(f==23){return "23";}
+    if(f==24){return "24";}
+    if(f==25){return "25";}
+    if(f==26){return "26";}
+    if(f==27){return "27";}
+    if(f==28){return "28";}
+    if(f==29){return "29";}
+    if(f==30){return "30";}
+    if(f==31){return "31";}
+    if(f==32){return "32";}
+    if(f==33){return "33";}
+    if(f==34){return "34";}
+    if(f==35){return "35";}
+    if(f==36){return "36";}
+    if(f==37){return "37";}
+    if(f==38){return "38";}
+    if(f==39){return "39";}
+}
