@@ -21,7 +21,7 @@ int main()
         a++;
         cout << Multiplicand << endl;
     }
-    cout<<mutiple(mutiple("39916810","12"),"13");
+    //cout<<mutiple("8717829120","15");
     return 0;
 }
 
@@ -181,6 +181,7 @@ string resultprocessing(string* d)
             carryin = carryout;
             carryout = 0;
             FinalResult =  cbuffer + FinalResult;
+            //cout<<FinalResult<<endl;
         }
         else
         {
@@ -207,6 +208,12 @@ string resultprocessing(string* d)
             }
 
         }
+    }
+    if(carryin != 0)
+    {
+        char overflow = carryin + '0';
+        FinalResult = overflow + FinalResult;
+        carryin = 0;
     }
     return FinalResult;
 }
