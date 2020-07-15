@@ -14,14 +14,14 @@ int main()
 {
     int a = 1;
     string Multiplicand = "1";
-    while(a<37)
+    while(a<100)
     {
         string temp = changeIntTo(a);
         Multiplicand = mutiple(Multiplicand,temp);
         a++;
-        cout << Multiplicand << endl;
+        cout << a-1 << "   " << Multiplicand << endl;
     }
-    //cout<<mutiple("8717829120","15");
+    //cout<<mutiple("8320987112741390144276341183223364380754172606361245952449277696409600000000","61");
     return 0;
 }
 
@@ -95,7 +95,7 @@ string mutiple(string a, string b)
             carryin = 0;
         }
         //carryin = 0;
-        //cout << result[0] <<" " <<result[1]<<endl;
+        //cout << result[0] << endl <<result[1]<<endl;
         return resultprocessing(result);
     }
 }
@@ -200,17 +200,19 @@ string resultprocessing(string* d)
             carryin = carryout;
             carryout = 0;
             FinalResult = cbuffer + FinalResult;
-            if(carryin != 0)
+            /*if(carryin != 0)
             {
+                cout << carryin <<endl;
                 char overflow = carryin + '0';
                 FinalResult = overflow + FinalResult;
                 carryin = 0;
-            }
+            }*/
 
         }
     }
     if(carryin != 0)
     {
+        //cout<< carryin <<endl;
         char overflow = carryin + '0';
         FinalResult = overflow + FinalResult;
         carryin = 0;
@@ -234,7 +236,63 @@ bool isNotZero(string e)
 
 string changeIntTo(int f)
 {
-    if(f==1){return "1";}
+    string changedResult = "";
+    int x = f;
+    int numberOfDigits = 0;
+    do
+    {
+        ++numberOfDigits;
+        x /= 10;
+    }while(x);
+    int temp_1 = 0; //store the digit to identify
+    int temp_2 = 0; //divided by ten after each loop
+    temp_2 = f;
+    while(numberOfDigits>0)
+    {
+        temp_1 = temp_2%10;
+        switch(temp_1)
+        {
+        case 9:
+            changedResult = "9" + changedResult;
+            break;
+        case 8:
+            changedResult = "8" + changedResult;
+            break;
+        case 7:
+            changedResult = "7" + changedResult;
+            break;
+        case 6:
+            changedResult = "6" + changedResult;
+            break;
+        case 5:
+            changedResult = "5" + changedResult;
+            break;
+        case 4:
+            changedResult = "4" + changedResult;
+            break;
+        case 3:
+            changedResult = "3" + changedResult;
+            break;
+        case 2:
+            changedResult = "2" + changedResult;
+            break;
+        case 1:
+            changedResult = "1" + changedResult;
+            break;
+        case 0:
+            changedResult = "0" + changedResult;
+            break;
+        default:
+            cout<<"Not a integer"<<endl;
+            return "-1";
+
+        }
+        temp_2 = temp_2/10;
+        numberOfDigits--;
+    }
+    return changedResult;
+
+    /*if(f==1){return "1";}
     if(f==2){return "2";}
     if(f==3){return "3";}
     if(f==4){return "4";}
@@ -272,5 +330,5 @@ string changeIntTo(int f)
     if(f==36){return "36";}
     if(f==37){return "37";}
     if(f==38){return "38";}
-    if(f==39){return "39";}
+    if(f==39){return "39";}*/
 }
